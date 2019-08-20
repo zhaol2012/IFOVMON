@@ -1,0 +1,9 @@
+<mvc:View controllerName="anders.aif.if.overview.controller.Mon"  
+	xmlns="sap.m" 
+	xmlns:mvc="sap.ui.core.mvc">
+		<List
+		id="IFD"
+		headerText="Interface Details" >
+
+	</List>
+</mvc:View>

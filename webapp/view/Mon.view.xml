@@ -1,0 +1,10 @@
+<mvc:View controllerName="anders.aif.if.overview.controller.Mon" 
+	xmlns="sap.m" 
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns:smartFilterBar="sap.ui.comp.smartfilterbar" 
+	xmlns:smartTable="sap.ui.comp.smarttable" displayBlock="true" height="100%">
+	<Page id="PIFMON" title="{i18n>TITLE}" showHeader="true" enableScrolling="true" class="sapUiContentPadding">
+		<content>
+		</content>
+	</Page>
+</mvc:View>

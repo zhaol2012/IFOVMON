@@ -1,0 +1,65 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" 
+    xmlns:l="sap.ui.layout" 
+    xmlns="sap.m" 
+    xmlns:core="sap.ui.core" controllerName="anders.aif.if.overview.controller.Overview" displayBlock="true" height="100%">
+    <Page id="page" title="{i18n>TITLE}" showHeader="true" enableScrolling="false" class="sapUiContentPadding">
+        <subHeader>
+            <OverflowToolbar >
+                <content>
+                    <Label text="{i18n>uname}" labelFor="UNAME" width="10%">
+                        <layoutData>
+                            <OverflowToolbarLayoutData shrinkable="true" minWidth="5%"/>
+                        </layoutData>
+                    </Label>
+                    <Input id="UNAME" required="true" type="Text" placeholder="{i18n>uname}" width="10%">
+                        <layoutData>
+                            <OverflowToolbarLayoutData shrinkable="true" minWidth="20px"/>
+                        </layoutData>
+                    </Input>
+                    <ToolbarSpacer/>
+                    <Label text="{i18n>datetime_from}" labelFor="DTFROM" width="10%">
+                        <layoutData>
+                            <OverflowToolbarLayoutData shrinkable="true" minWidth="20px"/>
+                        </layoutData>
+                    </Label>
+                    <DateTimePicker id="DTFROM" UTC="true" required="true" placeholder="{i18n>datetime_from}" width="10%">
+                        <layoutData>
+                            <OverflowToolbarLayoutData shrinkable="true" minWidth="30px"/>
+                        </layoutData>
+                    </DateTimePicker>
+                    <ToolbarSpacer/>
+                    <Label text="{i18n>datetime_to}" labelFor="DTTO" width="10%">
+                        <layoutData>
+                            <OverflowToolbarLayoutData shrinkable="true" minWidth="20px"/>
+                        </layoutData>
+                    </Label>
+                    <DateTimePicker id="DTTO" UTC="true" required="true" placeholder="{i18n>datetime_to}" width="10%">
+                        <layoutData>
+                            <OverflowToolbarLayoutData shrinkable="true" minWidth="30px"/>
+                        </layoutData>
+                    </DateTimePicker>
+                    <ToolbarSpacer/>
+                    <Button text="{i18n>GetStatic}" type="Emphasized" press="onGetSta">
+                        <layoutData>
+                            <OverflowToolbarLayoutData shrinkable="true" minWidth="20px"/>
+                        </layoutData>
+                    </Button>
+                </content>
+            </OverflowToolbar>
+        </subHeader>
+        <content>
+            <MessageStrip id="IFCount" visible="false" type="Success" showIcon="true" showCloseButton="true" class="sapUiMediumMarginBottom">
+            </MessageStrip>
+            <ScrollContainer height="100%" width="100%" horizontal="true" vertical="true" focusable="true">
+                <l:HorizontalLayout class="sapUiContentPadding nestedFlexboxes">
+                    <l:content>
+                        <VBox id="addContent" fitContainer="true" alignItems="Stretch">
+
+                        </VBox>
+
+                    </l:content>
+                </l:HorizontalLayout>
+            </ScrollContainer>
+        </content>
+    </Page>
+</mvc:View>

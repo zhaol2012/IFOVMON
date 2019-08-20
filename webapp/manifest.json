@@ -1,0 +1,111 @@
+{
+	"_version": "1.12.0",
+	"sap.app": {
+		"id": "anders.aif.if.overview",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"dataSources": {
+			"GetIFSta": {
+				"uri": "/sap/opu/odata/sap/ZIDX_TBL_BIND/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "model/metadata.xml",
+					"annotations": [
+						"UIAnnotation"
+					]
+				},
+				"UIAnnotation": {
+					"uri": "UIAnnotation.xml",
+					"type": "ODataAnnotation",
+					"settings": {
+						"localUri": "UIAnnotation.xml"
+					}
+				}
+			},
+			"IFStajson": {
+				"uri": "model/empty.json",
+				"type": "JSON"
+			}
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "anders.aif.if.overview.view.App",
+			"type": "XML",
+			"async": true,
+			"id": "app"
+		},
+		"dependencies": {
+			"minUI5Version": "1.67.0",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {}
+			}
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "anders.aif.if.overview.i18n.i18n"
+				}
+			},
+			"ifsta": {
+				"dataSource": "GetIFSta",
+				"settings": {
+					"defaultBindingMode": "OneWay",
+					"defaultCountMode": "Inline"
+				}
+			}
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "anders.aif.if.overview.view",
+				"controlId": "app",
+				"controlAggregation": "pages",
+				"async": true
+			},
+			"routes": [
+				{
+					"pattern": "",
+					"name": "overview",
+					"target": "overview"
+				},
+				{
+					"pattern": "monitor",
+					"name": "monitor",
+					"target": "detail"
+				}
+			],
+			"targets": {
+				"overview": {
+					"viewId": "overview",
+					"viewName": "Overview"
+				},
+				"detail": {
+					"viewId": "monitor",
+					"viewName": "Mon"
+				}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		}
+	}
+}
